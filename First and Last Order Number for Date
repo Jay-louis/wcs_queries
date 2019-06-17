@@ -1,0 +1,14 @@
+--Last order Number
+SELECT MAX(order_number) "Last Number"
+FROM t_order WITH (NOLOCK)
+WHERE CAST(order_date As DATE) = '2019-06-13'
+AND order_number NOT LIKE 'TO%'
+AND order_number NOT LIKE 'RTV%'
+AND order_number NOT LIKE 'SO%'
+--First Order Number
+SELECT MIN(order_number) "First Number"
+FROM t_order WITH (NOLOCK)
+WHERE CAST(order_date As DATE) = '2019-06-13'
+AND order_number NOT LIKE 'TO%'
+AND order_number NOT LIKE 'RTV%'
+AND order_number NOT LIKE 'SO%'
